@@ -36,16 +36,20 @@ jobs:
       - Test
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
+      - name: 'Checkout repository'
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: 18
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn
+
       - name: 'Build'
         run: yarn build
+
       - name: Publish 🚀
         run: npx semantic-release
         env:

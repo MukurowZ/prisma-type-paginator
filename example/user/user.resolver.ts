@@ -13,7 +13,6 @@ import { UserCreateInput } from '../../@generated/user/user-create.input';
 import { UserUpdateInput } from '../../@generated/user/user-update.input';
 import { UserWhereInput } from '../../@generated/user/user-where.input';
 import { UserDateInput } from './user-date.input';
-import { Resolver, Query, Args, Mutation, Info } from '@nestjs/graphql';
 
 const prisma = new PrismaClient({
   errorFormat: 'colorless',
