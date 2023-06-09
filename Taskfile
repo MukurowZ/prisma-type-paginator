@@ -65,7 +65,7 @@ bundle() {
 }
 
 commit_lint() {
-  if git-branch-is -q -r "^(master)"; then
+  if git-branch-is -q -r "^(main)"; then
     commitlint --edit
   else
     true
