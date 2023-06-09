@@ -11,7 +11,7 @@ function generatePaginator(model: DMMF.Model) {
   const typeName = `${modelName}Paginator`;
   return `
 import { ObjectType, Field } from '@nestjs/graphql';
-import { ${modelName} } from '../${lowerModelName}/${snakeCase(lowerModelName)}.model';
+import { ${modelName} } from '../${snakeCase(lowerModelName)}/${snakeCase(lowerModelName)}.model';
 import { PaginatorInfo } from '../prisma/paginator-info.output';
 
 @ObjectType({})
@@ -105,7 +105,7 @@ generatorHandler({
     const { datamodel } = JSON.parse(JSON.stringify(options.dmmf)) as DMMF.Document;
 
     datamodel.models.forEach(async (model) => {
-      const writeLocation = path.join(baseDir, `${model.name.toLowerCase()}`, `${snakeCase(model.name.toLowerCase())}-paginator.output.ts`);
+      const writeLocation = path.join(baseDir, `${snakeCase(model.name.toLowerCase())}`, `${snakeCase(model.name.toLowerCase())}-paginator.output.ts`);
 
       await writeFileSafely(writeLocation, generatePaginator(model));
     });
