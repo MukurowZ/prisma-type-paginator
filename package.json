@@ -1,0 +1,18 @@
+{
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "16.2.3",
+    "@commitlint/config-conventional": "16.0.0",
+    "@types/lodash": "^4.14.195",
+    "husky": "7.0.4"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "packageManager": "yarn@3.6.0"
+}
