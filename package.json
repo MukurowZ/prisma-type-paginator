@@ -1,18 +1,70 @@
 {
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "@commitlint/cli": "16.2.3",
-    "@commitlint/config-conventional": "16.0.0",
-    "@types/lodash": "^4.14.195",
-    "husky": "7.0.4"
+  "name": "@mukurowz/prisma-type-paginator",
+  "description": "php lighthouse like paginator for prisma schema",
+  "version": "1.0.1",
+  "main": "dist/generator.js",
+  "license": "MIT",
+  "bin": "dist/bin.js",
+  "engines": {
+    "node": ">=16.0"
   },
   "scripts": {
-    "prepare": "husky install"
+    "test": "npm run eslint && npm run tscheck && npm run test:cov",
+    "mocha": "node node_modules/mocha/bin/mocha",
+    "test:r": "npm run mocha -- -r ts-node/register --no-timeouts src/**/*.spec.ts",
+    "test:cov": "c8 --reporter text --exclude \"**/*.spec.ts\" --exclude \"**/test/**\"  npm run test:r",
+    "test:w": "npm run test:r -- --watch-files src --watch",
+    "test:d": "ndb -r @swc/register node_modules/mocha/bin/_mocha --no-timeouts --watch-files src/**/*.ts --watch src/**/*.spec.ts",
+    "tscheck": "tsc --noEmit",
+    "tscheck:w": "npm run tscheck -- --watch",
+    "eslint": "node node_modules/eslint/bin/eslint \"src/**/*.{ts,tsx}\"",
+    "eslint:w": "watchexec -w src \"npm run eslint\"",
+    "eslint:fix": "npm run eslint -- --fix",
+    "build": "sh Taskfile bundle",
+    "prisma:g": "node node_modules/prisma/build/index.js generate",
+    "format": "npx prettier ./@generated --write",
+    "regen": "rm -rf @generated && npm run prisma:g && npm run format",
+    "rt": "npm run regen && npm test",
+    "example": "node-dev example/main.ts",
+    "clean_cache": "rm -rf node_modules/.cache",
+    "compatibilty_check": "sh Taskfile compatibilty_check",
+    "commit": "cz"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "@prisma/client": "^4.15.0",
+    "@prisma/generator-helper": "^4.7.1",
+    "prettier": "2.5.1"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.3",
+    "@semantic-release/npm": "^10.0.3",
+    "@types/jest": "27.0.3",
+    "@types/node": "18.16.12",
+    "@types/prettier": "2.4.2",
+    "jest": "27.4.7",
+    "prisma": "^4.15.0",
+    "semantic-release": "^18.0.1",
+    "ts-jest": "27.1.4",
+    "typescript": "4.6.2"
+  },
+  "homepage": "https://github.com/MukurowZ/prisma-type-paginator#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MukurowZ/prisma-type-paginator"
+  },
+  "author": "parin.sasi.work@gmail.com",
+  "keywords": [
+    "prisma",
+    "prisma2",
+    "generator",
+    "paginator"
+  ],
+  "release": {
+    "branches": [
+      "main"
+    ]
   },
   "packageManager": "yarn@3.6.0"
 }
