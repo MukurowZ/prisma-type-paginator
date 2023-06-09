@@ -23,6 +23,8 @@
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^9.0.3",
+    "@semantic-release/npm": "^10.0.3",
     "@types/jest": "27.0.3",
     "@types/node": "18.16.12",
     "@types/prettier": "2.4.2",
