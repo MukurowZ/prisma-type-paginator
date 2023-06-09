@@ -48,7 +48,7 @@ jobs:
         run: yarn
 
       - name: 'Build'
-        run: yarn tsup src\bin.ts --format cjs --target es2020
+        run: yarn tsup src/bin.ts --format cjs --target es2020
 
       - name: Publish 🚀
         run: npx semantic-release
