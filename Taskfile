@@ -5,9 +5,9 @@ set -e
 build_hybrid() {
   set -x
   rm -rfv dist
-  npx tsup src/bin.ts -d=dist/esm --keep-names --format=esm --target=es2020 --sourcemap
-  npx tsup src/bin.ts -d=dist/cjs --keep-names --format=cjs --target=es2020 --sourcemap
-  npx tsup src/bin.ts -d=dist --dts-only
+  npx tsup src/generator.ts -d=dist/esm --keep-names --format=esm --target=es2020 --sourcemap
+  npx tsup src/generator.ts -d=dist/cjs --keep-names --format=cjs --target=es2020 --sourcemap
+  npx tsup src/generator.ts -d=dist --dts-only
   echo {\"type\": \"module\"} >dist/esm/package.json
   echo {\"type\": \"commonjs\"} >dist/cjs/package.json
   cp -fv README.md LICENSE dist
@@ -59,7 +59,7 @@ compatibilty_check() {
 
 bundle() {
   set -x
-  yarn tsup src/bin.ts --format cjs --target es2020
+  yarn tsup src/generator.ts --format cjs --target es2020
   cp -fv README.md LICENSE package.json dist
   cp -fv src/bin.js dist
 }
