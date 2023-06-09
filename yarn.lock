@@ -5,28 +5,6 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@mukurowz/prisma-type-paginator@workspace:packages/generator":
-  version: 0.0.0-use.local
-  resolution: "@mukurowz/prisma-type-paginator@workspace:packages/generator"
-  dependencies:
-    "@prisma/client": ^4.15.0
-    "@prisma/generator-helper": ^4.7.1
-    "@semantic-release/changelog": ^6.0.1
-    "@semantic-release/git": ^10.0.1
-    "@types/jest": 27.0.3
-    "@types/node": 18.16.12
-    "@types/prettier": 2.4.2
-    jest: 27.4.7
-    prettier: 2.5.1
-    prisma: ^4.15.0
-    semantic-release: ^18.0.1
-    ts-jest: 27.1.4
-    typescript: 4.6.2
-  bin:
-    prisma-type-paginator: dist/bin.js
-  languageName: unknown
-  linkType: soft
-
 "@ampproject/remapping@npm:^2.2.0":
   version: 2.2.1
   resolution: "@ampproject/remapping@npm:2.2.1"
@@ -939,6 +917,28 @@ __metadata:
   checksum: 0572669f855260808c16fe8f78f5f1b4356463b11d3f2c7c0b5580c8ba1cbf4ae53efe9f627595830856e57dbac2325ac17eb0c3dd0ec42102e6f227cc289c02
   languageName: node
   linkType: hard
+
+"@mukurowz/prisma-type-paginator@workspace:packages/generator":
+  version: 0.0.0-use.local
+  resolution: "@mukurowz/prisma-type-paginator@workspace:packages/generator"
+  dependencies:
+    "@prisma/client": ^4.15.0
+    "@prisma/generator-helper": ^4.7.1
+    "@semantic-release/changelog": ^6.0.1
+    "@semantic-release/git": ^10.0.1
+    "@types/jest": 27.0.3
+    "@types/node": 18.16.12
+    "@types/prettier": 2.4.2
+    jest: 27.4.7
+    prettier: 2.5.1
+    prisma: ^4.15.0
+    semantic-release: ^18.0.1
+    ts-jest: 27.1.4
+    typescript: 4.6.2
+  bin:
+    prisma-type-paginator: dist/bin.js
+  languageName: unknown
+  linkType: soft
 
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
