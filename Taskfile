@@ -59,7 +59,7 @@ compatibilty_check() {
 
 bundle() {
   set -x
-  npx tsup src/bin.ts --format cjs --target es2020
+  yarn tsup src/bin.ts --format cjs --target es2020
   cp -fv README.md LICENSE package.json dist
   cp -fv src/bin.js dist
 }
