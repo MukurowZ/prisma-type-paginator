@@ -47,7 +47,6 @@ jobs:
       - name: 'Build'
         run: yarn build
       - name: Publish 🚀
-        working-directory: ./packages/generator
         run: npx semantic-release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
