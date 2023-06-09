@@ -5,9 +5,9 @@ set -e
 build_hybrid() {
   set -x
   rm -rfv dist
-  npx tsup src/index.ts -d=dist/esm --keep-names --format=esm --target=es2020 --sourcemap
-  npx tsup src/index.ts -d=dist/cjs --keep-names --format=cjs --target=es2020 --sourcemap
-  npx tsup src/index.ts -d=dist --dts-only
+  npx tsup src/bin.ts -d=dist/esm --keep-names --format=esm --target=es2020 --sourcemap
+  npx tsup src/bin.ts -d=dist/cjs --keep-names --format=cjs --target=es2020 --sourcemap
+  npx tsup src/bin.ts -d=dist --dts-only
   echo {\"type\": \"module\"} >dist/esm/package.json
   echo {\"type\": \"commonjs\"} >dist/cjs/package.json
   cp -fv README.md LICENSE dist
@@ -39,8 +39,8 @@ compatibilty_check() {
   # emitSingle and emitCompiled
   sed -i 's/emitSingle *= false/emitSingle = true/g' prisma/schema.prisma
   rm -rf ./@generated && npm run prisma:g
-  npx tsc --noEmit --skipLibCheck --experimentalDecorators ./@generated/index.ts
-  npx ts-node ./@generated/index.ts
+  npx tsc --noEmit --skipLibCheck --experimentalDecorators ./@generated/bin.ts
+  npx ts-node ./@generated/bin.ts
 
   sed -i 's/emitCompiled *= false/emitCompiled = true/g' prisma/schema.prisma
   rm -rf ./@generated && npm run prisma:g
@@ -59,7 +59,7 @@ compatibilty_check() {
 
 bundle() {
   set -x
-  npx tsup src/index.ts --format cjs --target es2020
+  npx tsup src/bin.ts --format cjs --target es2020
   cp -fv README.md LICENSE package.json dist
   cp -fv src/bin.js dist
 }
