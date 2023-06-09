@@ -5,9 +5,9 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@MukurowZ/prisma-type-paginator@workspace:packages/generator":
+"@mukurowz/prisma-type-paginator@workspace:packages/generator":
   version: 0.0.0-use.local
-  resolution: "@MukurowZ/prisma-type-paginator@workspace:packages/generator"
+  resolution: "@mukurowz/prisma-type-paginator@workspace:packages/generator"
   dependencies:
     "@prisma/client": ^4.15.0
     "@prisma/generator-helper": ^4.7.1
