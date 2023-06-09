@@ -41,7 +41,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 18.x
+          node-version: 16.x
           registry-url: https://registry.npmjs.org
       - uses: actions/cache@v2
         with:
@@ -51,7 +51,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Publish 🚀
         working-directory: ./packages/generator
-        run: npx semantic-release
+        run: npx semantic-release@18.0.1
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
