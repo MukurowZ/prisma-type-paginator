@@ -1,7 +1,7 @@
 {
   "name": "@mukurowz/prisma-type-paginator",
   "description": "php lighthouse like paginator for prisma schema",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/generator.js",
   "license": "MIT",
   "bin": "dist/bin.js",
@@ -50,19 +50,6 @@
     "branches": [
       "main"
     ],
-    "plugins": [
-      "@semantic-release/npm",
-      "@semantic-release/github",
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "CHANGELOG.md",
-            "package.json"
-          ],
-          "message": "chore(release): set `package.json` to ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
-        }
-      ]
-    ]
+    "plugins": []
   }
 }
