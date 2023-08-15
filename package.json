@@ -1,7 +1,7 @@
 {
   "name": "@mukurowz/prisma-type-paginator",
   "description": "php lighthouse like paginator for prisma schema",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "index.js",
   "bin": "bin.js",
   "license": "MIT",
