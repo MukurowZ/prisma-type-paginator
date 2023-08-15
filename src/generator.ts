@@ -1,5 +1,5 @@
 import { generatorHandler, GeneratorOptions } from '@prisma/generator-helper';
-import type { DMMF } from '@prisma/client/runtime';
+import type { DMMF } from '@prisma/client/runtime/library';
 import path from 'path';
 import { kebabCase } from 'lodash';
 import fs from 'fs';
