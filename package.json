@@ -3,9 +3,7 @@
   "description": "php lighthouse like paginator for prisma schema",
   "version": "1.0.6",
   "main": "index.js",
-  "bin": {
-    "prisma-type-paginator": "bin.js"
-  },
+  "bin": "bin.js",
   "license": "MIT",
   "engines": {
     "node": ">=16.0"
