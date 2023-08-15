@@ -1,7 +1,7 @@
 {
   "name": "@mukurowz/prisma-type-paginator",
   "description": "php lighthouse like paginator for prisma schema",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "index.js",
   "bin": "bin.js",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "commit": "cz"
   },
   "dependencies": {
-    "@prisma/client": "^4.15.0",
+    "@prisma/client": "^5.1.1",
     "@prisma/generator-helper": "^4.7.1",
     "prettier": "2.5.1"
   },
@@ -48,7 +48,7 @@
     "@types/prettier": "2.4.2",
     "git-branch-is": "^4.0.0",
     "jest": "27.4.7",
-    "prisma": "^4.15.0",
+    "prisma": "^5.1.1",
     "semantic-release": "^18.0.1",
     "ts-jest": "27.1.4",
     "tslib": "^2.5.3",
