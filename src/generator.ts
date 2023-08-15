@@ -42,7 +42,7 @@ export class PaginatorInfo {
   firstItem: number;
 
   @Field(() => Boolean, {nullable:false})
-  hasMorePages: false;
+  hasMorePages: boolean;
 
   @Field(() => Int, {nullable:false})
   lastItem: number;
